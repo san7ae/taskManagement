@@ -9,6 +9,6 @@ const router = express_1.default.Router();
 // Define your routes and connect them to the controller functions
 router.get('/', taskController_1.getTasks);
 router.post('/', taskController_1.createTask);
-// router.put('/:id', updateTask);
+router.put('/:id', taskController_1.updateTask);
 router.delete('/:id', taskController_1.deleteTask);
 exports.default = router;

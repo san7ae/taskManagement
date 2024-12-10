@@ -29,13 +29,13 @@ const updateTask = (req, res) => {
     const { title, completed } = req.body;
     const task = tasks.find((task) => task.id === id);
     if (!task) {
-        return res.status(404).json({ message: 'Task not found' });
+        res.status(404).json({ message: 'Task not found' });
     }
-    if (title !== undefined)
+    if (task && title)
         task.title = title;
-    if (completed !== undefined)
+    if (task && completed)
         task.completed = completed;
-    return res.json(task);
+    res.json(task);
 };
 exports.updateTask = updateTask;
 // Delete a task
